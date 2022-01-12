@@ -1,0 +1,8 @@
+.DS_Store
+venv
+config
+__pycache__
+.localized
+.ipynb_checkpoints
+.python_version
+*.pickle
