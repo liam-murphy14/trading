@@ -1,40 +1,11 @@
-# Liam Murphy
-
 import warnings
 
 from pandas.io import json
 warnings.filterwarnings("ignore")
 import pandas as pd
-import matplotlib.pyplot as plt 
-plt.style.use("fivethirtyeight")
-from matplotlib import rcParams
-rcParams["figure.figsize"] = 10, 6
 import json 
 import datetime
 
-class StoredArima:
-    def __init__(self, fitted, newest_datetime):
-        self.fitted = fitted
-        self.newest_datetime = newest_datetime
-
-def json_to_dataframe(ticker : str):
-    path = "/Users/liammurphy/Documents/Personal/Projects/Python_Projects/trading/data/equities/" + ticker + ".json"
-    candles = pd.DataFrame((dict(json.load(open(path))))["candles"])
-    actual_dts = [datetime.datetime.fromtimestamp(mils / 1000) for mils in candles["datetime"]]
-    candles["datetime"] = actual_dts
-    candles.set_index("datetime", inplace=True)
-    # debug
-    # print(candles)
-    return candles
-
-def plot_close_price(ticker : str, candles : pd.DataFrame):
-    plt.figure(figsize=(10,6))
-    plt.grid(True)
-    plt.xlabel("Dates")
-    plt.ylabel("Close")
-    plt.plot(candles["close"])
-    plt.title(ticker +" Close Price")
-    plt.show()
 
 def create_auto_arima(train_closes : pd.Series):
     model_autoARIMA = auto_arima(train_closes, start_p=0, start_q=0,
