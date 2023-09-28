@@ -1,4 +1,4 @@
-"""A simple simple moving average trend following strategy. No stops, no bullshit. Cope."""
+"""A simple simple moving average trend following strategy. No stops. Cope."""
 
 # TODO: fix imports
 from ..setup.futures_system import FuturesSystem

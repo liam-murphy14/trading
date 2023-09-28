@@ -4,7 +4,6 @@ A module to open my trades. Records taken trades in that week's trade report.
 gets all newest quotes
 unpickles and updates models then gets predictions and stores them in a big ol dataframe (maybe using a user defined class or just tuples)
 try to grab all options quotes at the same time
-HERES WHERE WE GOTTA BE QUICK
 find closest options spread to prediction and find bid ask and find trades in order of rr all VERY fast ideally with dataframes
 """
 
